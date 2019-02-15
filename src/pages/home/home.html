@@ -1,14 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Segunda Mano
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <ion-grid>
+   <ion-row>
+     <ion-col *ngFor= "let dispositivo of dispositivos" col-3>
+      <ion-card (click)= "verDispositivo(dispositivo)">
+        <img *ngIf= "dispositivo.ad.hasOwnProperty('thumbnail')"
+        src="https://img.segundamano.mx/cover/{{dispositivo.ad.thumbnail.path}}">
+        <img *ngIf= "!dispositivo.ad.hasOwnProperty('thumbnail')"
+        src= "../assets/imgs/mac.jpg">
+        <ion-item>
+          <h2 *ngIf= "dispositivo.ad.hasOwnProperty('prices')">
+            {{dispositivo.ad.subject}}
+          </h2>
+          <p *ngIf= "dispositivo.ad.hasOwnProperty('locations')">
+            {{dispositivo.ad.locations[0].locations[0].label}}, {{dispositivo.ad.locations[0].label}}
+          </p>
+          <h2 *ngIf= "dispositivo.ad.hasOwnProperty('prices')">
+            {{dispositivo.ad.prices[0].label}}
+          </h2>
+        </ion-item>
+      </ion-card>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
 </ion-content>
