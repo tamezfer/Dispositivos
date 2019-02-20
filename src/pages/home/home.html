@@ -1,16 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Segunda Mano
+      <ion-buttons start>
+          <button ion-button icon-only (click)= "buscar()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title style= "background-color: #C6DDF0">
+      Segunda Mano: Computadoras y Accesorios
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style= "background-color: #5E4955">
  <ion-grid>
    <ion-row>
      <ion-col *ngFor= "let dispositivo of dispositivos" col-3>
-      <ion-card (click)= "verDispositivo(dispositivo)">
+      <ion-card style="color: cornflowerblue" (click)= "verDispositivo(dispositivo)">
         <img *ngIf= "dispositivo.ad.hasOwnProperty('thumbnail')"
         src="https://img.segundamano.mx/cover/{{dispositivo.ad.thumbnail.path}}">
         <img *ngIf= "!dispositivo.ad.hasOwnProperty('thumbnail')"

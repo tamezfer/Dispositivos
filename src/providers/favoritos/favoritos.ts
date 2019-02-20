@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastController } from 'ionic-angular';
+
 
 /*
   Generated class for the FavoritosProvider provider.
@@ -11,7 +13,7 @@ import { Injectable } from '@angular/core';
 export class FavoritosProvider {
   favoritos = [];
 
-  constructor(public http: HttpClient) {
+  constructor(public toastCtrl: ToastController) {
     console.log('Hello FavoritosProvider Provider');
   }
 

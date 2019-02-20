@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { DispositivoPage } from '../dispositivo/dispositivo';
+import { FavoritosPage } from '../favoritos/favoritos';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-home',
@@ -9,6 +11,7 @@ import { DispositivoPage } from '../dispositivo/dispositivo';
 })
 export class HomePage {
   dispositivoPage = DispositivoPage;
+  searchPage = SearchPage;
   dispositivos= [];
 
   constructor(public navCtrl: NavController,
@@ -29,5 +32,12 @@ export class HomePage {
   {
     this.navCtrl.push(this.dispositivoPage, {dispositivo: dispositivo});
   }
+
+  buscar()
+  {
+    this.navCtrl.push(this.searchPage, 
+      {dispositivos: this.dispositivos});
+  }
+
 
 }

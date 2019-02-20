@@ -10,13 +10,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { DispositivoPage } from '../pages/dispositivo/dispositivo';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { FavoritosProvider } from '../providers/favoritos/favoritos';
+import { TabsPage } from '../pages/tabs/tabs';
+import { SearchPage } from '../pages/search/search';
+import { VideojuegosPage } from '../pages/videojuegos/videojuegos';
+import { EmpleoPage } from '../pages/empleo/empleo';
+import { InfoVideojuegoPage } from '../pages/info-videojuego/info-videojuego';
+import { InfoEmpleoPage } from '../pages/info-empleo/info-empleo';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DispositivoPage,
-    FavoritosPage
+    FavoritosPage,
+    TabsPage,
+    SearchPage,
+    VideojuegosPage,
+    EmpleoPage,
+    InfoVideojuegoPage,
+    InfoEmpleoPage
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +42,13 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     MyApp,
     HomePage,
     DispositivoPage,
-    FavoritosPage
+    FavoritosPage,
+    TabsPage,
+    SearchPage,
+    VideojuegosPage,
+    EmpleoPage,
+    InfoVideojuegoPage,
+    InfoEmpleoPage
   ],
   providers: [
     StatusBar,
